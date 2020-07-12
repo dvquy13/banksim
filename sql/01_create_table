@@ -1,0 +1,13 @@
+USE banksim;
+CREATE TABLE transaction (
+    step INT NOT NULL,
+    customer VARCHAR(255) NOT NULL,
+    age VARCHAR(255) NULL,
+    gender VARCHAR(255) NULL,
+    zipcodeOri VARCHAR(255) NULL,
+    merchant VARCHAR(255) NULL,
+    zipMerchant VARCHAR(255) NULL,
+    category VARCHAR(255) NULL,
+    amount DECIMAL(10, 2) NULL,
+    fraud INT NULL
+);
