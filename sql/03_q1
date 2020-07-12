@@ -1,0 +1,27 @@
+-- MySQL 8.0.20
+-- Find customers who use multiple service categories, listing all of their service categories and merchants in that category.
+
+with
+  valid_customers as (
+    select
+      customer,
+      count(distinct category) as cnt_cate
+    from
+      banksim.transaction
+    group by
+      1
+    having
+      cnt_cate > 1
+  )
+
+select distinct
+  vc.customer,
+  vc.cnt_cate,
+  bt.category,
+  bt.merchant
+from
+  banksim.transaction as bt
+join
+  valid_customers as vc
+using
+  (customer);

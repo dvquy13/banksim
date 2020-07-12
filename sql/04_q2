@@ -1,0 +1,29 @@
+-- MySQL 8.0.20
+-- Rank customers by the number of unique merchants they have used in the last 30 days
+
+use banksim;
+set @interval = 30;
+-- to remove ONLY_FULL_GROUP_BY
+set sql_mode='';
+
+with
+  agg_stats as (
+    select
+      max(step) as max_step
+    from
+      transaction
+  )
+
+select
+  customer,
+  count(distinct merchant) as cnt_mc
+from
+  transaction,
+  agg_stats
+where
+  -- last 30 days means from 151 to 180 inclusive so we add 1
+  step >= (agg_stats.max_step - @interval + 1)
+group by
+  1
+order by
+  2 desc;
