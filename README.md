@@ -8,6 +8,7 @@ Source: https://www.kaggle.com/ntnu-testimon/banksim1/data#
 
 # Naming
 ## Data
-|name|meaning|
-|---|---|
-|`fe1`|basic stats aggregated by customer|
+|name|base|meaning|
+|---|---|---|
+|`fe1`|None|basic numerical features' stats aggregated by customer|
+|`fe2`|`fe1`|add basic categorical features' stats|
