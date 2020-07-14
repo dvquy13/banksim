@@ -1,0 +1,11 @@
+name: banksim
+dependencies:
+  - python==3.8.3
+  - pip
+  - numpy==1.18.5
+  - pandas==1.0.5
+  - scikit-learn==0.23.1
+  - jupyter==1.0.0
+  - seaborn==0.10.1
+  - pip:
+    - mlflow=1.9.1
