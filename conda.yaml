@@ -8,4 +8,5 @@ dependencies:
   - jupyter==1.0.0
   - seaborn==0.10.1
   - pip:
-    - mlflow=1.9.1
+    - mlflow==1.9.1
+    - hyperopt==0.2.4

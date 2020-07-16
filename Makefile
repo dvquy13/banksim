@@ -27,4 +27,4 @@ install-conda-env:
 	conda env create -f conda.yaml
 
 update-conda-env:
-	conda env update --prefix ./env --file conda.yaml  --prune
+	conda env update banksim --file conda.yaml --prune
