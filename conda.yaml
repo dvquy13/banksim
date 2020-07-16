@@ -10,3 +10,4 @@ dependencies:
   - pip:
     - mlflow==1.9.1
     - hyperopt==0.2.4
+    - featuretools==0.17.0
